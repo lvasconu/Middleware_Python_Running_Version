@@ -1,0 +1,40 @@
+﻿{% extends "base.html" %} {#Impedes elements to be centered.#}
+{% load static %}
+{% block content %}
+
+<!--
+Refs:
+https://getbootstrap.com/docs/4.4/examples/sign-in/
+-->
+
+<head>
+    <title>GA | Insira suas credenciais</title>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+</head>
+
+<main class="text-center">
+    <form class="form-signin">
+
+        <img class="mb-4" src="{% static 'icons/Public_Blue_512.png' %}" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Insira suas credenciais</h1>
+            
+        <label for="Login" class="sr-only">Login</label>
+        <input type="text" id="Login" class="form-control" placeholder="Login" required autofocus>
+            
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            
+        <div class="checkbox mb-3">
+            <label >
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+    </form>
+</main>
+
+
+{% endblock %}

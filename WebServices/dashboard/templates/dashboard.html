@@ -1,0 +1,118 @@
+﻿<!-- 
+    Dashboard to be used by security personal.
+    It is a client to the consumer.
+    -->
+
+{% extends "base.html" %} {#Impedes elements to be centered.#}
+{% load static %}
+{% block content %}
+
+<head>
+    <title>GA | Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/personCard.css' %}">
+</head>
+
+<script language="javascript">
+    // Ref: https://channels.readthedocs.io/en/latest/tutorial/index.html
+    // Trying to open a WebSocket to the URL ws://127.0.0.1:8000/ws/dashboard/
+    // console.error(window.location.host)
+    var ws_url = 'ws://' + window.location.host + '/ws/dashboard/';                 // WebSocket URL
+    var DashboardSocket = new WebSocket(ws_url);                                    // Creating WebSocket.
+    // document.querySelector('#Dashboard-log').value += (ws_url + '\n');           // Printing address on dashboard-log:
+
+    // Possible numbers for access response:
+    var AccessGranted = [1, 2, 3, 4, 6];
+    var AcessBlocked = [5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
+    var AccessUndefined = [];
+    var tag;
+
+    // On message received:
+    DashboardSocket.onmessage = function (event) {
+        var data_dict = JSON.parse(event.data);                                     // Loading info from JSON to a dictionary.
+
+        // Seeing if access_response_type in inside one of possible values. Ref: https://www.w3schools.com/jsref/jsref_includes_array.asp
+        // And associating corresponding tag (which will reffer to each column).
+        if (AccessGranted.includes(data_dict['access_made_type'])) {
+            tag = "AccessGranted";
+        } else if (AcessBlocked.includes(data_dict['access_made_type'])) {
+            tag = "AcessBlocked";
+        } else {
+            tag = "AccessUndefined";
+        }
+
+        // Calling method includeHTML and passing 'tag' and data:
+        includeHTML(tag, data_dict);
+
+        //debugger;   // Ref: https://www.digitalocean.com/community/tutorials/debugging-javascript-with-google-chrome-devtools-and-visual-studio-code
+
+    };
+
+    DashboardSocket.onclose = function (event) {
+        console.error('Dashboard socket closed unexpectedly');
+    };
+
+    function includeHTML(tag, data_dict) {
+        /* Refs:
+         * How TO - Include HTML: https://www.w3schools.com/howto/howto_html_include.asp , https://www.w3schools.com/howto/tryit.asp?filename=tryhow_html_include_1
+         * How to append HTML code to a div using JavaScript ? https://www.geeksforgeeks.org/how-to-append-html-code-to-a-div-using-javascript/
+         */
+        var file = '/static/personCard.html';
+        var elmnt = document.getElementById(tag);       // Getting element (in this document) with the id corresponding to the tag.
+        var xhttp = new XMLHttpRequest();               // Making an HTTP request using the attribute value as the file name.
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {                 // If operation is done. Ref: https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHttpRequest/readyState
+                if (this.status == 200) {               // If status ok. Ref: https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status/200
+                    HTTPresponse = this.responseText;   // Getting response.
+
+                    // Replacing fields with data from data_dict:
+                    for (var key in data_dict) {
+                        var HTTPresponse = HTTPresponse.replace('{' + '{ '+ key + ' }}', data_dict[key]); // Separating '{'s.
+                    }
+                    elmnt.insertAdjacentHTML("afterbegin", HTTPresponse);
+                }
+                // If did not find html, displays "Page not found".
+                else if (this.status == 404) {
+                    elmnt.insertAdjacentHTML("afterbegin", 'Page not found.');  // Ref: https://www.youtube.com/watch?v=E6B-ig8NHQE
+                }    
+            }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+
+        return;
+    };
+
+
+</script>
+
+<!-- Dashboard layout -->
+<div class="row active-with-click">
+
+    {#Left column.#}
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <h2>Acesso negado</h2>
+        <div class="jumbotron" id="left-column" style="background-color:#FF0000"> {#Ref: https://www.android-examples.com/override-change-the-background-color-of-jumbotron-bootstrap/#}
+            <div id="AcessBlocked"></div>
+        </div>
+    </div>
+
+    {#Middle column.#}
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <h2>Indefinido</h2>
+        <div class="jumbotron" id="middle-column" style="background-color:#FFDD33">
+            <div id="AccessUndefined"></div>
+        </div>
+    </div>
+
+    {#Right column.#}
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <h2>Acesso permitido</h2>
+        <div class="jumbotron" id="right-column" style="background-color:#6BFF33">
+            <div id="AccessGranted"></div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

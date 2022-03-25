@@ -1,0 +1,52 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>3971b24d-dc55-44f5-888d-5eae04a5436f</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>RPi_1pn.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>Deprecated - Middleware_RPi_1pn</Name>
+    <RootNamespace>RPi_1pn</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AcionamentoRemoto_RPi_1pn_Setup\config_RPi_1pn.py" />
+    <Compile Include="AuxFunctions.py" />
+    <Compile Include="config_RPi_1pn.py" />
+    <Compile Include="RPi_1pn.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AcionamentoRemoto_RPi_1pn_Setup\" />
+    <Folder Include="Documentation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AcionamentoRemoto_RPi_1pn_Setup\Inicia_RPi_1pn.sh" />
+    <Content Include="Documentation\Etiqueta.docx" />
+    <Content Include="Documentation\Lista de equipamentos.xlsx" />
+    <Content Include="Documentation\Projeto com RPi.docx" />
+    <Content Include="Documentation\Projeto_Conexões e pinagem PBC 2018-06.pdf" />
+    <Content Include="Documentation\Relatório 2018-10 - Elevadores EAMN.pdf" />
+    <Content Include="Documentation\Transistor - BC548 npn - Datasheet.pdf" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>

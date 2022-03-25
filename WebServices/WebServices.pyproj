@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>WebServices</Name>
+    <RootNamespace>Dashboard</RootNamespace>
+    <InterpreterId>MSBuild|env37|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
+    <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
+    <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
+    <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>991996a2-e1a3-4578-aa26-5623ccfe8c94</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <WebBrowserUrl>http://localhost:5866/GlobalAccess/admin/database_api/tbpessoa/47049/change/</WebBrowserUrl>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>WebServices.settings</DjangoSettingsModule>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="accounts\admin.py" />
+    <Compile Include="accounts\apps.py" />
+    <Compile Include="accounts\migrations\__init__.py" />
+    <Compile Include="accounts\models.py" />
+    <Compile Include="accounts\tests.py" />
+    <Compile Include="accounts\views.py" />
+    <Compile Include="accounts\__init__.py" />
+    <Compile Include="dashboard\consumers.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dashboard\routing.py" />
+    <Compile Include="database_api\admin.py" />
+    <Compile Include="database_api\apps.py" />
+    <Compile Include="database_api\controllers\access.py" />
+    <Compile Include="database_api\controllers\equipment.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="database_api\controllers\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="database_api\migrations\0001_initial.py" />
+    <Compile Include="database_api\migrations\0002_auto_20210312_2254.py" />
+    <Compile Include="database_api\migrations\__init__.py" />
+    <Compile Include="database_api\models.py" />
+    <Compile Include="database_api\models_methods.py" />
+    <Compile Include="database_api\tests.py" />
+    <Compile Include="database_api\urls.py" />
+    <Compile Include="database_api\views.py" />
+    <Compile Include="database_api\__init__.py" />
+    <Compile Include="conftest.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebServices\routing.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="home\forms.py" />
+    <Compile Include="home\models.py" />
+    <Compile Include="home\tests.py" />
+    <Compile Include="home\views.py" />
+    <Compile Include="home\__init__.py" />
+    <Compile Include="home\migrations\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="WebServices\__init__.py" />
+    <Compile Include="WebServices\settings.py" />
+    <Compile Include="WebServices\urls.py" />
+    <Compile Include="WebServices\wsgi.py" />
+    <Compile Include="dashboard\admin.py" />
+    <Compile Include="dashboard\apps.py" />
+    <Compile Include="dashboard\migrations\__init__.py" />
+    <Compile Include="dashboard\models.py" />
+    <Compile Include="dashboard\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dashboard\tests.py" />
+    <Compile Include="dashboard\views.py" />
+    <Compile Include="dashboard\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="accounts\" />
+    <Folder Include="accounts\migrations\" />
+    <Folder Include="accounts\templates\" />
+    <Folder Include="dashboard\static\" />
+    <Folder Include="dashboard\static\css\" />
+    <Folder Include="database_api\" />
+    <Folder Include="database_api\migrations\" />
+    <Folder Include="database_api\controllers\" />
+    <Folder Include="database_api\templates\" />
+    <Folder Include="database_api\templates\database_api\" />
+    <Folder Include="WebServices\static\" />
+    <Folder Include="WebServices\static\css\" />
+    <Folder Include="WebServices\static\icons\" />
+    <Folder Include="WebServices\templates\" />
+    <Folder Include="home\" />
+    <Folder Include="home\migrations\" />
+    <Folder Include="home\static\" />
+    <Folder Include="home\static\home\" />
+    <Folder Include="home\static\home\content\" />
+    <Folder Include="home\static\home\fonts\" />
+    <Folder Include="home\static\home\scripts\" />
+    <Folder Include="home\templates\" />
+    <Folder Include="home\templates\home\" />
+    <Folder Include="WebServices\" />
+    <Folder Include="dashboard\" />
+    <Folder Include="dashboard\migrations\" />
+    <Folder Include="dashboard\templates\" />
+    <Folder Include="redis\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="0 - Notes.py" />
+    <Content Include="dashboard\static\css\dashboard.css" />
+    <Content Include="dashboard\static\css\personCard.css" />
+    <Content Include="dashboard\static\personCard.html" />
+    <Content Include="database_api\templates\database_api\pessoa_change_form.html" />
+    <Content Include="pytest.ini">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="WebServices\static\css\login.css" />
+    <Content Include="accounts\templates\login.html" />
+    <Content Include="WebServices\static\css\sticky-footer-navbar.css" />
+    <Content Include="WebServices\static\icons\Public_Blue_512.png" />
+    <Content Include="WebServices\templates\base.html" />
+    <Content Include="home\templates\home\index.html" />
+    <Content Include="home\static\home\content\bootstrap.css" />
+    <Content Include="home\static\home\content\bootstrap.min.css" />
+    <Content Include="home\static\home\content\site.css" />
+    <Content Include="home\static\home\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="home\static\home\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="home\static\home\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="home\static\home\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="home\static\home\scripts\bootstrap.js" />
+    <Content Include="home\static\home\scripts\bootstrap.min.js" />
+    <Content Include="home\static\home\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="home\static\home\scripts\jquery-1.10.2.js" />
+    <Content Include="home\static\home\scripts\jquery-1.10.2.min.js" />
+    <Content Include="home\static\home\scripts\jquery-1.10.2.min.map" />
+    <Content Include="home\static\home\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="home\static\home\scripts\jquery.validate.js" />
+    <Content Include="home\static\home\scripts\jquery.validate.min.js" />
+    <Content Include="home\static\home\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="home\static\home\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="home\static\home\scripts\modernizr-2.6.2.js" />
+    <Content Include="home\static\home\scripts\respond.js" />
+    <Content Include="home\static\home\scripts\respond.min.js" />
+    <Content Include="home\static\home\scripts\_references.js" />
+    <Content Include="home\templates\home\about.html" />
+    <Content Include="home\templates\home\contact.html" />
+    <Content Include="home\templates\home\layout - deprecated.html" />
+    <Content Include="home\templates\home\login.html" />
+    <Content Include="home\templates\home\loginpartial.html" />
+    <Content Include="dashboard\templates\dashboard.html" />
+    <Content Include="redis\EventLog.dll" />
+    <Content Include="redis\Redis on Windows Release Notes.docx" />
+    <Content Include="redis\Redis on Windows.docx" />
+    <Content Include="redis\redis-benchmark.exe" />
+    <Content Include="redis\redis-check-aof.exe" />
+    <Content Include="redis\redis-cli.exe" />
+    <Content Include="redis\redis-server.exe" />
+    <Content Include="redis\redis.windows-service.conf" />
+    <Content Include="redis\redis.windows.conf" />
+    <Content Include="redis\Windows Service Documentation.docx" />
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.html">
+      <SubType>WebBrowser</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env37\">
+      <Id>env37</Id>
+      <Version>3.7</Version>
+      <Description>env37 (Python 3.7 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

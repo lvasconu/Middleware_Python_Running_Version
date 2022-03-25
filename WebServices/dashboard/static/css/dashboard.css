@@ -1,0 +1,19 @@
+
+/*Overriding container width just for dashboard.*/
+.container { 
+    max-width: 90%;
+}
+
+.jumbotron {
+    margin: 0px 0px 0px;
+    padding: 5px 5px; /*Default:64px 32px.*/
+}
+
+/*Reducing padding content collumns*/
+.col-md-4.col-sm-6.col-xs-12 {
+    padding: 0px 5px; /*Default: 0px 15px*/
+}
+
+    .col-md-4.col-sm-6.col-xs-12 h2 {
+        text-align: center;
+    }

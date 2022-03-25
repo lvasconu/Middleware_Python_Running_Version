@@ -1,0 +1,55 @@
+﻿<!-- Refs:
+Style:
+    https://bootsnipp.com/snippets/35VEB
+    https://bootsnipp.com/snippets/WaeDX
+Separating dashboard and person card:
+    https://docs.djangoproject.com/en/3.0/ref/templates/builtins/#include
+    https://ultimatedjango.com/learn-django/lessons/new-contact-createupdate-templates/
+-->
+
+<article class="material-card Red">
+    <!-- Info in label -->
+    <h2>
+        <span></span>
+        <strong>
+            <!-- <i class="fa fa-fw fa-magic"></i> --> <!-- Maginc wand icon -->
+            {{ person_name }}<br />
+            {{ person_id_description }}: {{ person_id_number }}<br />
+            {{ identifier_type }}: {{ identifier_number }}<br />
+            Solicitado: {{ access_request_description }}<br />
+            Realizado: {{ access_made_description }}<br />
+        </strong>
+    </h2>
+
+    <!-- Image content -->
+    <div class="mc-content">
+
+        <!-- Image -->
+        <div class="img-container">
+            <img class="img-responsive" src="data:image/jpg;base64, {{ person_photo_base64 }}" />  <!-- Ref: https://stackoverflow.com/questions/8499633/how-to-display-base64-images-in-html -->
+        </div>
+
+        <!-- Text below picture. -->
+        <!--
+        <div class="mc-description">
+            Text below picture.
+        </div>
+        -->
+    </div>
+
+    <!-- Small button on top right corner -->
+    <!--
+    <a class="mc-btn-action">
+        <i class="fa fa-bars"></i>
+    </a>
+    -->
+
+    <!-- Footer -->
+    <!--
+    <div class="mc-footer">
+        <h4>
+            Footer
+        </h4>
+    </div>
+    -->
+</article>

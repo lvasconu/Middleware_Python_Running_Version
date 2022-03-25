@@ -1,0 +1,150 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>7da8563a-8e95-4997-8ca3-35a591b9549d</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>main.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>Middleware</Name>
+    <RootNamespace>ControleAcesso_Python_Project</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>pytest</TestFramework>
+    <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
+    <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
+    <UnitTestPattern>test*.py</UnitTestPattern>
+    <UnitTestRootDirectory>.</UnitTestRootDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="config_files\config_simple_database.py" />
+    <Compile Include="config_files\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="controllers\email_controller.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="controllers\list_controller.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="config_files\config_global_access.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="config_files\config_email.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="controllers\log_cleaner_controller.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="controllers\log_controller.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="controllers\photo_controller.py" />
+    <Compile Include="controllers\qrcode_controller.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="global_access\report_controller.py" />
+    <Compile Include="controllers\socket_controller.py" />
+    <Compile Include="equipment_modules\intelbras_eventos_incontrol.py" />
+    <Compile Include="equipment_modules\intelbras.py" />
+    <Compile Include="equipment_modules\config_equipment.py" />
+    <Compile Include="equipment_modules\wolpac.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="config_files\SS7520FaceT_temporary.py" />
+    <Compile Include="tests\controllers\test_list_controller.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\controllers\test_photo_controller.py" />
+    <Compile Include="tests\equipment_modules\test_intelbras.py" />
+    <Compile Include="tests\equipment_modules\test_generic_module.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\global_access\test_api_controller.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\controllers\test_email_controller.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\global_access\test_escape_route_controller.py" />
+    <Compile Include="tests\equipment_modules\test_equipment_escape_routes.py" />
+    <Compile Include="sensors\acura.py" />
+    <Compile Include="equipment_modules\comm5.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="equipment_modules\generic_module.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="global_access\escape_route_controller.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="global_access\api_controller.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="main.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="controllers\server_controller.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="controllers\" />
+    <Folder Include="equipment_modules\" />
+    <Folder Include="global_access\" />
+    <Folder Include="config_files\" />
+    <Folder Include="installation\" />
+    <Folder Include="start_up\" />
+    <Folder Include="static\" />
+    <Folder Include="tests\" />
+    <Folder Include="sensors\" />
+    <Folder Include="tests\global_access\" />
+    <Folder Include="tests\equipment_modules\" />
+    <Folder Include="tests\controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="installation\install_WebServices_win.bat" />
+    <Content Include="installation\install_Middleware_win.bat" />
+    <Content Include="installation\install_Middleware_rpi.sh" />
+    <Content Include="installation\install_all_win.bat">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="requirements.txt" />
+    <Content Include="start_up\start_up_all_win.bat" />
+    <Content Include="start_up\start_up_Middleware_rpi.sh" />
+    <Content Include="static\Alexandre16.jpg" />
+    <Content Include="static\logo 2020_Symbol.png" />
+    <Content Include="tests\equipment_modules\test_equipment_escape_routes.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.8</Version>
+      <Description>env (Python 3.8 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>

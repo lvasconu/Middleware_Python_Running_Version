@@ -1,0 +1,16 @@
+Fluxo de comunicação
+	1a conexão cria objeto comm5
+	Conexões subsequentes passam objetos sockets (controller específico) para objeto comm5.
+	Ping dentro de cada socket.
+	Cada socket carrega driver de equipamento conectado (se houver).
+
+Definições
+	Sockets terão conexão permanente (Em oposição a: sockets não serão criados temporariamente para uma comunicação específica).
+	Conexão (e teste de ping) será gerenciada por controller próprio (Socket_Controller).
+	Definição de períodos:
+
+	* Timeout - Middleware - Server: Não se aplica
+	* Timeout - Middleware - Client: 10 s
+	* Timeout - Comm5 - Client: 10 s
+	* Ping - 5 s (3 pings para offline)
+

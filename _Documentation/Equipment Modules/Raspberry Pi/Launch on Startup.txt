@@ -1,0 +1,51 @@
+Método utilizando bash script:
+	No terminal, abrir:
+	
+		Raspbian Buster: 
+			sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+			Ref: https://www.raspberrypi.org/forums/viewtopic.php?t=243743
+			
+		Raspbian anteriores:
+			sudo nano ~/.config/lxsession/LXDE-pi/autostart
+		
+		No arquivo, acrescentar na última linha (após @xscreensaver -no-splash):
+			@lxterminal -e [caminho]/[arquivo_inicia].sh
+			
+			Ex: 
+				@lxterminal -e /home/pi/ControleAcesso_Python_Project/StartUp.sh
+			
+			(não colocar "python")
+
+	Criar arquivo bash com (exemplo):
+		#!/bin/bash
+		echo "Starting Global Access Comm5 Middleware in 20 seconds"
+		sleep 20
+		lxterminal -e python3 /home/pi/ControleAcesso_Python_Project/main.py
+		
+	No arquivo .sh:
+		Mouse 2 >
+			Propriedades >
+				Permissões >
+					Executar >
+						Selecionar "Qualquer um".
+
+
+Método rodando direto arquivo .py (nem sempre funciona):
+	No terminal, abrir:
+		nano ~/.config/lxsession/LXDE-pi/autostart
+
+	No arquivo, acrescentar na última linha (após @xscreensaver -no-splash) 
+		@lxterminal -e python3 /home/pi/Desktop/Scripts_1pn/ProjetoAlarme_1pn.py
+		
+	No arquivo .py:
+		Mouse 2 >
+			Propriedades >
+				Permissões >
+					Executar >
+						Selecionar "Qualquer um".
+	
+
+
+		
+		
+		

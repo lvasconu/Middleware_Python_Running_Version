@@ -1,0 +1,13 @@
+License Activator
+
+Necessário definir como licenciamento funcionará.
+
+Filosofia de monetização:
+	Cobrança por período. Ex. Licença comprada permite uso ilimitado por 1 ano.
+	Cobrança por equipamento. Valor base * quantidade de equipamentos conectados * fator de desconto (maior desconto para quantidade maior de equipamentos).
+
+Funcionamento quanto licença expira:
+	Bloqueio total do funcionamento do software. Nenhum equipamento (porta, catraca, etc) funciona.
+	Equipamentos já existentes permanecem funcionando, mas não se pode adicionar novos nem editar antigos.
+	Equipamentos já existentes permanecem funcionando, mas não se pode adicionar novos.
+	Equipamentos já existentes permanecem funcionando, mas não se pode editar cadastros. Ex.: adicionar nova pessoa, associar novo crachá a pessoa existente.
